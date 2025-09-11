@@ -1,6 +1,6 @@
 require python3-lxa-iobus.inc
 
-PV = "0.5.1+git${SRCPV}"
+PV = "0.5.1+git"
 SRCBRANCH = "master"
 SRCREV = "30f376167212249e6e4e5035a902a98b647126bf"
 
