@@ -1,0 +1,60 @@
+recipes:
+  - recipe: "recipes-devtools/python/python3-aiohttp-json-rpc_$PV.bb"
+    pypi:
+      name: aiohttp-json-rpc
+      version_pattern: "^([\\d+\\.]*\\d+)$"
+      version_order: semver
+
+  - recipe: "recipes-devtools/python/python3-labgrid_$PV.bb"
+    git_tag:
+      url: "https://github.com/labgrid-project/labgrid.git"
+      version_pattern: "^v([\\d+\\.]*\\d+)$"
+      version_order: semver
+
+  - recipe: "recipes-devtools/python/python3-labgrid_git.bb"
+    git_branch:
+      url: "https://github.com/labgrid-project/labgrid.git"
+      branch: master
+      version_pattern: "^v([\\d+\\.]*\\d+).*"
+
+  - recipe: "recipes-devtools/python/python3-lxa-iobus_$PV.bb"
+    git_tag:
+      url: "https://github.com/linux-automation/lxa-iobus.git"
+      version_pattern: "^v([\\d+\\.]*\\d+)$"
+      version_order: semver
+
+  - recipe: "recipes-devtools/python/python3-lxa-iobus_git.bb"
+    git_branch:
+      url: "https://github.com/linux-automation/lxa-iobus.git"
+      branch: master
+      version_pattern: "^v([\\d+\\.]*\\d+).*"
+
+  - recipe: "recipes-devtools/python/python3-powerrelay_git.bb"
+    git_branch:
+      url: "https://github.com/prevas-dk/labgrid-powerrelay.git"
+      branch: master
+
+  - recipe: "recipes-devtools/python/python3-pyserial_$PV.bb"
+    github_release:
+      project: labgrid-project/pyserial
+      version_pattern: "^v([\\d+\\.]*\\d+)$"
+      version_order: semver
+
+  - recipe: "recipes-devtools/python/python3-usbmuxctl_$PV.bb"
+    pypi:
+      name: usbmuxctl
+      version_pattern: "^([\\d+\\.]*\\d+)$"
+      version_order: semver
+
+  - recipe: "recipes-devtools/python/python3-usbsdmux_$PV.bb"
+    git_tag:
+      url: "https://github.com/linux-automation/usbsdmux.git"
+      version_pattern: "^([\\d+\\.]*\\d+)$"
+      version_order: semver
+
+  - recipe: "recipes-devtools/sispmctl/sispmctl_$PV.bb"
+    sourceforge:
+      project: sispmctl
+      version_pattern: ".*sispmctl-([\\d+\\.]*\\d+)\\.tar\\.gz.*"
+    tarball:
+      url: "https://sourceforge.net/projects/sispmctl/files/sispmctl/sispmctl-$PV/sispmctl-$PV.tar.gz"
