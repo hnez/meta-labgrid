@@ -2,10 +2,10 @@
 
 require python3-labgrid.inc
 
-# Version v25.0-175-g0c01c19 commited 2025-12-02 17:16:07 +0100
+# Version v25.0-187-gcb7b04f commited 2026-01-02 18:33:12 +0100
 PV = "25.0+git"
 SRCBRANCH = "master"
-SRCREV = "0c01c19b29b8ac2f115d06f9d9a284544d212d6f"
+SRCREV = "cb7b04f0288a16ab755145abb133b0dc2d4c8c3e"
 
 LABGRID_USE_DEVEL_VERSION[doc] = "Global switch to enable labgrid development (git) version"
 LABGRID_USE_DEVEL_VERSION ??= "-1"
