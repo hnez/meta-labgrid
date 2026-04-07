@@ -52,9 +52,9 @@ recipes:
       version_pattern: "^([\\d+\\.]*\\d+)$"
       version_order: semver
 
-  - recipe: "recipes-devtools/sispmctl/sispmctl_$PV.bb"
-    sourceforge:
-      project: sispmctl
-      version_pattern: ".*sispmctl-([\\d+\\.]*\\d+)\\.tar\\.gz.*"
-    tarball:
-      url: "https://sourceforge.net/projects/sispmctl/files/sispmctl/sispmctl-$PV/sispmctl-$PV.tar.gz"
+#  - recipe: "recipes-devtools/sispmctl/sispmctl_$PV.bb"
+#    sourceforge:
+#      project: sispmctl
+#      version_pattern: ".*sispmctl-([\\d+\\.]*\\d+)\\.tar\\.gz.*"
+#    tarball:
+#      url: "https://sourceforge.net/projects/sispmctl/files/sispmctl/sispmctl-$PV/sispmctl-$PV.tar.gz"
