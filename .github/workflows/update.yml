@@ -23,15 +23,21 @@ jobs:
           git config user.name "Recipe Updater Bot"
 
       - name: Create a new branch
-        run: git checkout -b "update/recipes-$(date +%Y%m%d)"
+        run: |
+          git remote add upstream "${{ github.server_url }}/labgrid-project/meta-labgrid.git"
+          git fetch upstream
+          git checkout -b "update/recipes-$(date +%Y%m%d)" upstream/master
 
       - name: Run update script
-        run: python3 -u tools/update/update.py tools/update/recipes.yaml
+        run: |
+          git checkout "${{ github.sha }}" -- tools/update/
+          python3 -u tools/update/update.py tools/update/recipes.yaml
 
       - name: Commit changes to recipes
         id: recipe-commit
         run: |
           git add .
+          git reset tools/update/
           git commit --signoff --message="Recipe updates for $(date +%Y-%m-%d)"
         continue-on-error: true
 
@@ -43,4 +49,7 @@ jobs:
         if: ${{ steps.recipe-commit.outcome == 'success' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr create --base "${{ github.ref_name }}" --fill-first
+        run: |
+          gh pr create --base "master" \
+            --body "I hope you'll like it." \
+            --title "Recipe updates for $(date +%Y-%m-%d)"
